@@ -12,14 +12,13 @@ export const Chip = ({ label, selected, onPress, style }: ChipProps) => {
   return (
     <TouchableOpacity
       onPress={onPress}
-      className={`px-5 py-3 rounded-full border m-1 ${selected ? 'bg-forest border-forest' : 'bg-transparent border-forest/10'}`}
+      className={`px-5 py-2.5 rounded-full border m-1 ${selected ? 'bg-primary border-primary' : 'bg-white border-primary/10'}`}
       style={[
-        { minHeight: 48, minWidth: 48, justifyContent: 'center', alignItems: 'center' }, 
-        selected && styles.selected,
+        { justifyContent: 'center', alignItems: 'center' }, 
         style
       ]}
     >
-      <Text className={`text-base font-medium ${selected ? 'text-white' : 'text-forest/60'}`}>
+      <Text className={`text-sm font-sans-bold ${selected ? 'text-white' : 'text-primary/60'}`}>
         {label}
       </Text>
     </TouchableOpacity>
@@ -28,6 +27,6 @@ export const Chip = ({ label, selected, onPress, style }: ChipProps) => {
 
 const styles = StyleSheet.create({
   selected: {
-    backgroundColor: '#3A5244',
+    backgroundColor: '#2D4F36',
   }
 });

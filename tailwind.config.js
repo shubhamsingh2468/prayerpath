@@ -5,14 +5,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        forest: "#3A5244",
-        ivory: "#F9F7F2",
-        tan: "#C5B18D",
-        sage: "#A8B5A3",
-        charcoal: "#333333",
+        primary: "#2D4F36", // Sage Green (Dark)
+        background: "#F9F7F2", // Cream/Ivory
+        accent: "#A8B5A3", // Soft Sage
+        tan: "#C5B18D", // Earth tone for path
+        muted: "rgba(45, 79, 54, 0.5)",
+        surface: "#FFFFFF",
+      },
+      fontFamily: {
+        serif: ["PlayfairDisplay_400Regular", "serif"],
+        sans: ["Inter_400Regular", "sans-serif"],
+        "sans-bold": ["Inter_700Bold", "sans-serif"],
+        "serif-bold": ["PlayfairDisplay_700Bold", "serif"],
       },
       borderRadius: {
-        'soft': '30px',
+        'soft': '20px',
       },
     },
   },

@@ -10,8 +10,8 @@ interface SoftCardProps {
 export const SoftCard = ({ children, style, className = '' }: SoftCardProps) => {
   return (
     <View 
-      className={`bg-ivory rounded-[30px] p-6 shadow-sm border border-sage/10 ${className}`}
-      style={[styles.card, style]}
+      className={`bg-white rounded-soft p-5 shadow-sm border border-primary/5 ${className}`}
+      style={[style]}
     >
       {children}
     </View>
@@ -20,10 +20,9 @@ export const SoftCard = ({ children, style, className = '' }: SoftCardProps) => 
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#FCFAF7',
-    borderRadius: 30,
-    padding: 24,
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#D1DACE1A',
+    borderColor: 'rgba(45, 79, 54, 0.05)',
   },
 });

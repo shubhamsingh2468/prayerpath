@@ -17,10 +17,8 @@ export const SoftButton = ({ onPress, title, variant = 'primary', style, textSty
   return (
     <TouchableOpacity 
       onPress={onPress} 
-      className={`h-[56px] rounded-full flex-row justify-center items-center px-8 ${isPrimary ? 'bg-forest' : 'bg-transparent border border-forest/20'}`}
+      className={`h-14 rounded-2xl flex-row justify-center items-center px-6 ${isPrimary ? 'bg-primary' : 'bg-transparent border border-primary/20'}`}
       style={[
-        styles.button, 
-        isPrimary ? styles.primary : styles.secondary,
         disabled && { opacity: 0.5 },
         style
       ]}
@@ -29,13 +27,13 @@ export const SoftButton = ({ onPress, title, variant = 'primary', style, textSty
     >
       <View className="flex-1 items-center">
         <Text 
-          className={`font-semibold text-lg ${isPrimary ? 'text-white' : 'text-forest'}`}
-          style={[styles.text, isPrimary ? { color: '#FFF' } : { color: '#3A5244' }, textStyle]}
+          className={`font-sans-bold text-lg ${isPrimary ? 'text-white' : 'text-primary'}`}
+          style={[textStyle]}
         >
           {title}
         </Text>
       </View>
-      <ArrowRight size={20} color={isPrimary ? "#FFF" : "#3A5244"} />
+      <ArrowRight size={20} color={isPrimary ? "#FFF" : "#2D4F36"} />
     </TouchableOpacity>
   );
 };
@@ -43,21 +41,9 @@ export const SoftButton = ({ onPress, title, variant = 'primary', style, textSty
 const styles = StyleSheet.create({
   button: {
     height: 56,
-    borderRadius: 28,
+    borderRadius: 16,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 24,
-  },
-  primary: {
-    backgroundColor: '#3A5244',
-  },
-  secondary: {
-    backgroundColor: 'transparent',
-    borderWidth: 1,
-    borderColor: 'rgba(58, 82, 68, 0.2)',
-  },
-  text: {
-    fontWeight: '600',
-    fontSize: 18,
   },
 });

@@ -12,8 +12,7 @@ export const ScreenWrapper = ({ children, className = '', useSafeArea = true }: 
   if (!useSafeArea) {
     return (
       <View 
-        className={`flex-1 bg-ivory ${className}`}
-        style={styles.container}
+        className={`flex-1 bg-background ${className}`}
       >
         {children}
       </View>
@@ -22,8 +21,7 @@ export const ScreenWrapper = ({ children, className = '', useSafeArea = true }: 
   
   return (
     <SafeAreaView 
-      className={`flex-1 bg-ivory ${className}`}
-      style={styles.container}
+      className={`flex-1 bg-background ${className}`}
     >
       {children}
     </SafeAreaView>
@@ -33,6 +31,6 @@ export const ScreenWrapper = ({ children, className = '', useSafeArea = true }: 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FCFAF7', // Ivory fallback
+    backgroundColor: '#F9F7F2',
   },
 });
