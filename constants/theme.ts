@@ -5,19 +5,23 @@
 
 import { Platform } from 'react-native';
 
-const primaryColor = '#2D4F36';
-const backgroundColor = '#F9F7F2';
+const primaryColor = '#3E5846'; // Earthy Sage Green
+const backgroundColor = '#F9F7F2'; // Soft Cream
+const clayColor = '#D98A6C'; // Warm Clay
 
 export const Colors = {
   light: {
-    text: '#2D4F36',
+    text: '#3E5846',
     background: backgroundColor,
     tint: primaryColor,
-    icon: '#2D4F36',
+    icon: '#3E5846',
     tabIconDefault: '#A8B5A3',
     tabIconSelected: primaryColor,
     surface: '#FFFFFF',
     border: '#E8E4D9',
+    clay: clayColor,
+    primary: primaryColor,
+    cream: backgroundColor,
   },
   dark: {
     text: '#F9F7F2',
@@ -26,8 +30,11 @@ export const Colors = {
     icon: '#A8B5A3',
     tabIconDefault: '#6B7F70',
     tabIconSelected: '#F9F7F2',
-    surface: '#2D4F36',
-    border: '#3A5244',
+    surface: '#3E5846',
+    border: '#4A6352',
+    clay: '#E29E84',
+    primary: '#A8B5A3',
+    cream: '#1A2E20',
   },
 };
 

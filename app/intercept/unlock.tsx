@@ -4,50 +4,46 @@ import { useRouter } from 'expo-router';
 import { ScreenWrapper } from '../../components/ScreenWrapper';
 import { PathLogo } from '../../components/PathLogo';
 import { CheckCircle, Lock, ChevronRight, ArrowLeft } from 'lucide-react-native';
-import { SoftCard } from '../../components/SoftCard';
 
 export default function UnlockScreen() {
   const router = useRouter();
 
   return (
-    <ScreenWrapper className="px-5 justify-center">
-      <TouchableOpacity 
-        onPress={() => router.back()} 
-        className="absolute top-6 left-6 z-10 p-2"
-      >
-        <ArrowLeft size={24} color="#2D4F36" />
-      </TouchableOpacity>
+    <ScreenWrapper className="px-8 justify-between py-20 bg-[#F9F7F2]">
+      <View style={{ height: 24 }} />
 
-      <View className="items-center mb-12">
+      <View className="items-center">
         <PathLogo size={100} />
       </View>
       
-      <View className="items-center mb-16">
-        <View className="bg-[#E8F1E8] w-24 h-24 rounded-full items-center justify-center mb-8">
-          <CheckCircle size={48} color="#2D4F36" />
+      <View className="items-center">
+        <View className="w-24 h-24 rounded-full items-center justify-center mb-8" style={{ backgroundColor: '#D98A6C20' }}>
+          <View className="bg-[#D98A6C] w-16 h-16 rounded-full items-center justify-center shadow-lg shadow-[#D98A6C]/40">
+            <CheckCircle size={32} color="white" />
+          </View>
         </View>
-        <Text className="font-serif text-4xl text-primary text-center leading-tight mb-4">
+        
+        <Text className="font-serif text-4xl text-[#3E5846] text-center leading-tight mb-4">
           Well done, Jordan.
         </Text>
-        <Text className="font-sans text-muted text-lg text-center">
+        <Text className="font-sans text-[#3E5846]/60 text-xl text-center leading-relaxed">
           You paused before scrolling.{"\n"}That matters.
         </Text>
       </View>
 
       <View className="gap-4">
         <TouchableOpacity 
-          className="bg-primary p-5 rounded-2xl flex-row items-center justify-center"
+          className="bg-[#3E5846] p-5 rounded-3xl flex-row items-center justify-center shadow-md"
           onPress={() => router.replace('/(tabs)')}
         >
-          <Text className="text-white font-sans-bold text-lg mr-2">Continue to App</Text>
-          <ChevronRight size={20} color="white" />
+          <Text className="text-white font-sans-bold text-lg">Continue to TikTok</Text>
         </TouchableOpacity>
         
         <TouchableOpacity 
-          className="p-4 items-center"
+          className="p-5 rounded-3xl border border-[#3E5846]/20 items-center justify-center"
           onPress={() => router.replace('/(tabs)')}
         >
-          <Text className="text-primary/60 font-sans text-base">Go back home</Text>
+          <Text className="text-[#3E5846] font-sans text-base">Go back Home</Text>
         </TouchableOpacity>
       </View>
     </ScreenWrapper>

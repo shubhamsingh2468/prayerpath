@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { ScreenWrapper } from '../../components/ScreenWrapper';
 import { PathLogo } from '../../components/PathLogo';
 import { useRouter } from 'expo-router';
-import { Bell, Pause, HandMetal, FileText, ChevronRight, Sun, BookOpen, PlayCircle, ArrowLeft } from 'lucide-react-native';
+import { Bell, Pause, HandMetal, FileText, ChevronRight, Sun, BookOpen, PlayCircle, ArrowLeft, Activity } from 'lucide-react-native';
 import { SoftCard } from '../../components/SoftCard';
 
 export default function HomeScreen() {
@@ -22,101 +22,125 @@ export default function HomeScreen() {
         </View>
 
         <View className="mb-6">
-          <Text className="font-serif text-3xl text-primary mb-1">Good morning, Jordan.</Text>
-          <Text className="font-sans text-muted text-lg">You're building something that lasts.</Text>
+          <Text className="font-serif text-3xl text-[#3E5846] mb-1">Good morning, Jordan.</Text>
+          <Text className="font-sans text-[#3E5846]/60 text-lg">You're building something that lasts.</Text>
         </View>
 
-        <SoftCard className="bg-primary p-6 mb-6">
-          <View className="flex-row justify-between items-center mb-6">
-            <Text className="text-white font-sans-bold text-lg">Today's Progress</Text>
+        <TouchableOpacity activeOpacity={0.9} className="mb-8">
+          <View className="bg-[#3E5846] rounded-[32px] p-8 shadow-2xl shadow-[#3E5846]/40 relative overflow-hidden">
+            {/* Decorative elements for glassmorphism feel */}
+            <View className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full" />
+            <View className="absolute -bottom-10 -left-10 w-24 h-24 bg-[#D98A6C]/20 rounded-full" />
+            
+            <View className="flex-row justify-between items-center mb-8">
+              <Text className="text-white font-serif text-xl">Today's Progress</Text>
+              <View className="bg-white/20 px-3 py-1 rounded-full">
+                <Text className="text-white/90 font-sans text-xs">Keep going 🌿</Text>
+              </View>
+            </View>
+
+            <View className="flex-row justify-between items-center mb-8">
+              <View className="items-center">
+                <View className="w-16 h-16 bg-white/10 rounded-full items-center justify-center mb-3 border border-white/20">
+                  <Pause size={28} color="white" />
+                </View>
+                <Text className="text-white font-serif text-2xl">5</Text>
+                <Text className="text-white/60 font-sans text-[10px] uppercase tracking-widest mt-1">Pauses</Text>
+              </View>
+              
+              <View className="items-center">
+                <View className="w-16 h-16 bg-white/10 rounded-full items-center justify-center mb-3 border border-white/20">
+                  <HandMetal size={28} color="white" />
+                </View>
+                <Text className="text-white font-serif text-2xl">3</Text>
+                <Text className="text-white/60 font-sans text-[10px] uppercase tracking-widest mt-1">Prayers</Text>
+              </View>
+              
+              <View className="items-center">
+                <View className="w-16 h-16 bg-white/10 rounded-full items-center justify-center mb-3 border border-white/20">
+                  <FileText size={28} color="white" />
+                </View>
+                <Text className="text-white font-serif text-2xl">2</Text>
+                <Text className="text-white/60 font-sans text-[10px] uppercase tracking-widest mt-1">Reflections</Text>
+              </View>
+            </View>
+            
+            <Text className="text-white/50 font-sans text-center text-sm italic">
+              "Every pause is a step closer to growth."
+            </Text>
+          </View>
+        </TouchableOpacity>
+
+        <View className="mb-8">
+          <View className="flex-row items-center mb-4 justify-between">
+            <View className="flex-row items-center">
+              <Sun size={20} color="#D98A6C" />
+              <Text className="font-serif text-2xl text-[#3E5846] ml-2">Today's Prayer</Text>
+            </View>
             <TouchableOpacity>
-              <Text className="text-white/70 font-sans text-sm">Keep going 🌿</Text>
+              <Text className="text-[#3E5846]/60 font-sans text-sm">View All</Text>
             </TouchableOpacity>
           </View>
-          <View className="flex-row justify-around items-center mb-4">
-            <View className="items-center">
-              <View className="w-14 h-14 bg-white/20 rounded-full items-center justify-center mb-2"><Pause size={24} color="white" /></View>
-              <Text className="text-white font-serif-bold text-2xl">5</Text>
-              <Text className="text-white/70 font-sans text-sm">Pauses</Text>
-            </View>
-            <View className="items-center">
-              <View className="w-14 h-14 bg-white/20 rounded-full items-center justify-center mb-2"><HandMetal size={24} color="white" /></View>
-              <Text className="text-white font-serif-bold text-2xl">3</Text>
-              <Text className="text-white/70 font-sans text-sm">Prayers</Text>
-            </View>
-            <View className="items-center">
-              <View className="w-14 h-14 bg-white/20 rounded-full items-center justify-center mb-2"><FileText size={24} color="white" /></View>
-              <Text className="text-white font-serif-bold text-2xl">2</Text>
-              <Text className="text-white/70 font-sans text-sm">Reflections</Text>
-            </View>
-          </View>
-          <Text className="text-white/60 font-sans text-center text-sm">Every pause is a step closer to growth.</Text>
-        </SoftCard>
-
-        <View className="mb-6">
-          <View className="flex-row items-center mb-4">
-            <Sun size={20} color="#C5B18D" />
-            <Text className="font-serif-bold text-2xl text-primary ml-2">Today's Prayer</Text>
-          </View>
-          <SoftCard className="bg-white p-5 flex-row">
+          
+          <View className="bg-white rounded-3xl p-6 flex-row border border-[#E8E4D9]">
             <View className="flex-1 pr-4">
-              <Text className="font-sans text-muted text-base mb-4">A short prayer to center your heart and mind today.</Text>
+              <Text className="font-sans text-[#3E5846]/70 text-base leading-relaxed mb-6">
+                A short prayer to center your heart and mind today.
+              </Text>
               <View className="flex-row gap-3">
-                <TouchableOpacity className="bg-primary px-4 py-2 rounded-lg flex-row items-center">
-                  <BookOpen size={16} color="white" /><Text className="text-white font-sans-bold ml-2">Read</Text>
+                <TouchableOpacity 
+                  className="bg-[#3E5846] px-5 py-2.5 rounded-xl flex-row items-center"
+                  onPress={() => router.push('/intercept')}
+                >
+                  <BookOpen size={16} color="white" />
+                  <Text className="text-white font-sans-bold ml-2">Read</Text>
                 </TouchableOpacity>
-                <TouchableOpacity className="bg-[#F4F1EA] px-4 py-2 rounded-lg flex-row items-center">
-                  <PlayCircle size={16} color="#2D4F36" /><Text className="text-primary font-sans-bold ml-2">Listen</Text>
+                <TouchableOpacity className="bg-[#F4F1EA] px-5 py-2.5 rounded-xl flex-row items-center">
+                  <PlayCircle size={16} color="#3E5846" />
+                  <Text className="text-[#3E5846] font-sans-bold ml-2">Listen</Text>
                 </TouchableOpacity>
               </View>
             </View>
-            <View className="w-24 h-24 items-center justify-center">
-              <View className="bg-accent/10 w-24 h-24 rounded-full items-center justify-center">
-                <BookOpen size={48} color="#A8B5A3" />
-              </View>
+            <View className="w-20 h-20 items-center justify-center bg-[#F9F7F2] rounded-2xl border border-[#E8E4D9]">
+              <BookOpen size={32} color="#D98A6C" />
             </View>
-          </SoftCard>
+          </View>
         </View>
 
-        <SoftCard className="bg-[#E8EADE] p-5 mb-6 flex-row items-center">
-          <View className="bg-white/50 p-2 rounded-full mr-4"><Sun size={24} color="#2D4F36" /></View>
-          <View className="flex-1">
-            <Text className="font-sans text-muted text-sm">You've chosen intention</Text>
-            <Text className="font-serif-bold text-xl text-primary">23 times this week.</Text>
-            <Text className="font-sans text-muted text-xs">Amazing commitment!</Text>
-          </View>
-          <View className="flex-row items-end gap-1 h-12">
-            {[2, 4, 3, 5, 8, 6, 5].map((h, i) => (
-              <View key={i} className="w-1.5 bg-primary/30 rounded-t-sm" style={{ height: h * 4 }} />
-            ))}
-          </View>
-        </SoftCard>
-
-        <SoftCard className="bg-white p-5 mb-6 flex-row items-center justify-between">
-          <View className="flex-row items-center">
-            <View className="bg-[#F4F1EA] p-2 rounded-full mr-4"><Pause size={24} color="#2D4F36" /></View>
-            <View>
-              <Text className="font-sans text-muted text-sm">Top Trigger This Week</Text>
-              <Text className="font-serif-bold text-xl text-primary">Anxiety</Text>
-              <Text className="font-sans text-muted text-xs">8 times</Text>
+        <View className="bg-white rounded-3xl p-6 mb-8 flex-row items-center justify-between border border-[#E8E4D9]">
+          <View className="flex-row items-center flex-1">
+            <View className="bg-[#F9F1E8] w-14 h-14 rounded-2xl items-center justify-center mr-4">
+              <Activity size={28} color="#D98A6C" />
             </View>
-          </View>
-          <TouchableOpacity className="bg-[#F4F1EA] px-3 py-2 rounded-lg flex-row items-center">
-            <Text className="text-primary font-sans-bold text-sm mr-1">View Insights</Text><ChevronRight size={14} color="#2D4F36" />
-          </TouchableOpacity>
-        </SoftCard>
-
-        <View className="mb-10">
-          <Text className="font-sans-bold text-lg text-primary mb-3">Quick Start</Text>
-          <TouchableOpacity className="bg-primary p-5 rounded-2xl flex-row items-center justify-between">
-            <View className="flex-row items-center">
-              <View className="bg-white/20 p-2 rounded-full mr-4"><HandMetal size={24} color="white" /></View>
-              <View>
-                <Text className="text-white font-sans-bold text-lg">Start a Prayer</Text>
-                <Text className="text-white/60 font-sans text-sm">Take a moment anytime</Text>
+            <View className="flex-1">
+              <Text className="font-sans text-[#3E5846]/40 text-xs uppercase tracking-widest mb-1">Top Trigger This Week</Text>
+              <View className="flex-row items-baseline">
+                <Text className="font-serif text-2xl text-[#3E5846]">Anxiety</Text>
+                <Text className="font-sans text-[#3E5846]/60 text-sm ml-2">(8 times)</Text>
               </View>
             </View>
-            <ChevronRight size={24} color="white" />
+          </View>
+          <TouchableOpacity className="bg-[#F4F1EA] p-3 rounded-xl">
+            <ChevronRight size={20} color="#3E5846" />
+          </TouchableOpacity>
+        </View>
+
+        <View className="mb-12">
+          <Text className="font-serif text-xl text-[#3E5846] mb-4">Quick Start</Text>
+          <TouchableOpacity 
+            className="bg-white rounded-3xl p-6 flex-row items-center justify-between border border-[#E8E4D9]"
+            onPress={() => router.push('/intercept')}
+          >
+            <View className="flex-row items-center">
+              <View className="bg-[#3E5846]/10 w-12 h-12 rounded-full items-center justify-center mr-4">
+                <HandMetal size={24} color="#3E5846" />
+              </View>
+              <View>
+                <Text className="text-[#3E5846] font-sans-bold text-lg">Start a Prayer</Text>
+                <Text className="text-[#3E5846]/60 font-sans text-sm">Take a moment anytime</Text>
+              </View>
+            </View>
+            <ChevronRight size={24} color="#3E5846" />
           </TouchableOpacity>
         </View>
       </ScrollView>

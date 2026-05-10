@@ -37,9 +37,9 @@ export default function PrayerCardScreen() {
         <View className="gap-4">
           <TouchableOpacity 
             className="bg-primary p-5 rounded-2xl flex-row items-center justify-center"
-            onPress={() => router.push('/intercept/unlock')}
+            onPress={() => router.push('/intercept/reflection')}
           >
-            <Text className="text-white font-sans-bold text-lg">Continue to App</Text>
+            <Text className="text-white font-sans-bold text-lg">Go to Reflection</Text>
           </TouchableOpacity>
           
           <TouchableOpacity 
