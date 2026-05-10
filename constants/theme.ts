@@ -5,8 +5,8 @@
 
 import { Platform } from 'react-native';
 
-const primaryColor = '#3E5846'; // Earthy Sage Green
-const backgroundColor = '#F9F7F2'; // Soft Cream
+const primaryColor = '#2D4739'; // Deep Forest Green
+const backgroundColor = '#F5F1E9'; // Soft Earth Tone Background
 const clayColor = '#D98A6C'; // Warm Clay
 
 export const Colors = {

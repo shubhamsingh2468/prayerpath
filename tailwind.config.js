@@ -5,11 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#2D4F36", // Sage Green (Dark)
-        background: "#F9F7F2", // Cream/Ivory
+        primary: "#2D4739", // Deep Forest Green
+        background: "#F5F1E9", // Soft Earth Tone Background
         accent: "#A8B5A3", // Soft Sage
         tan: "#C5B18D", // Earth tone for path
-        muted: "rgba(45, 79, 54, 0.5)",
+        muted: "rgba(45, 71, 57, 0.5)",
         surface: "#FFFFFF",
       },
       fontFamily: {

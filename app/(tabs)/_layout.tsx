@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tabs } from 'expo-router';
-import { Home, BookOpen, BarChart2, User } from 'lucide-react-native';
+import { Home, Users, BarChart2, User } from 'lucide-react-native';
 import { Colors } from '../../constants/theme';
 import { Platform } from 'react-native';
 
@@ -33,16 +33,16 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="prayers"
+        name="community"
         options={{
-          title: 'Prayers',
-          tabBarIcon: ({ color }) => <BookOpen size={24} color={color} />,
+          title: 'Community',
+          tabBarIcon: ({ color }) => <Users size={24} color={color} />,
         }}
       />
       <Tabs.Screen
-        name="stats"
+        name="insights"
         options={{
-          title: 'Stats',
+          title: 'Insights',
           tabBarIcon: ({ color }) => <BarChart2 size={24} color={color} />,
         }}
       />

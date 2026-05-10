@@ -31,6 +31,6 @@ export const ScreenWrapper = ({ children, className = '', useSafeArea = true }: 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F9F7F2',
+    backgroundColor: '#F5F1E9',
   },
 });
